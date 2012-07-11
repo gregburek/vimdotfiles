@@ -25,3 +25,15 @@
 [submodule "bundle/solarized"]
 	path = bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "bundle/ctlp"]
+	path = bundle/ctlp
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundle/autotag"]
+	path = bundle/autotag
+	url = git://github.com/vim-scripts/AutoTag.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

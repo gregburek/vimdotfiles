@@ -9,7 +9,19 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 set nu                          " line numbers
+let mapleader = ","
 "" set rnu                      " relative line numbers
+set hidden
+set history=1000
+set wildmenu
+set wildmode=list:longest
+set title
+set scrolloff=3
+set ruler
+set backspace=indent,eol,start
+nmap <silent> <leader>n :silent :nohlsearch<CR>
+set shortmess=atI
+set visualbell
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -32,3 +44,12 @@ au FileType py set autoindent
 au FileType py set smartindent
 au FileType py set textwidth=79 " PEP-8 Friendly
 autocmd BufRead *.py nmap <F5> :!python %<CR>
+
+"" Ruby specific
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+
+"" shortcuts 
+nmap <leader>e :NERDTreeToggle<CR>
+nmap <leader>r :NERDTreeFind<cr>
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
+noremap <silent> <Leader>y :TagbarToggle<cr>

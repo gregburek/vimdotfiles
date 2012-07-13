@@ -2,29 +2,38 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 "" call pathogen#infect()
+"" many settings from http://items.sjbach.com/319/configuring-vim-right
 
 set nocompatible                " choose no compatibility with legacy vi
 syntax enable
 set encoding=utf-8
+
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
 set nu                          " line numbers
+set ruler
 let mapleader = ","
-"" set rnu                      " relative line numbers
-set hidden
-set history=1000
-set wildmenu
-set wildmode=list:longest
+set hidden                      " allow Vim to manage multiple buffers effectively
+set history=1000                " Keep a longer history
+set wildmenu                    " Make file/command completion useful
+set wildmode=list:longest       " complete only up to the point of ambiguity
 set title
-set scrolloff=3
-set ruler
-set backspace=indent,eol,start
-nmap <silent> <leader>n :silent :nohlsearch<CR>
-set shortmess=atI
+set shortmess=atI               " Stifle many interruptive prompts
 set visualbell
-set ruler
+
+"" Scrolling
+set scrolloff=3
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
+
+"" Setup global tmp dirs
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+"" Solarized settings
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -37,6 +46,7 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+nmap <silent> <leader>n :silent :nohlsearch<CR>
 
 "" Python specific 
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅

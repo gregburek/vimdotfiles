@@ -62,7 +62,7 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 "" Omnicomplete
 filetype plugin on
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 autocmd FileType ruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby let g:rubycomplete_buffer_loading=1
 autocmd FileType ruby let g:rubycomplete_classes_in_global=1
@@ -74,3 +74,5 @@ nmap <leader>e :NERDTreeToggle<CR>
 nmap <leader>r :NERDTreeFind<cr>
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
 noremap <silent> <Leader>y :TagbarToggle<cr>
+nnoremap <leader>a :Ack 
+nnoremap <leader>s :Ack<cr>

@@ -72,7 +72,7 @@ autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 "" shortcuts 
 nmap <leader>e :NERDTreeToggle<CR>
 nmap <leader>r :NERDTreeFind<cr>
-let g:tagbar_ctags_bin='/usr/local/bin/ctags'  " Proper Ctags locations
+let g:tagbar_ctags_bin='ctags'  " Proper Ctags locations
 noremap <silent> <Leader>y :TagbarToggle<cr>
 nnoremap <leader>a :Ack 
 nnoremap <leader>s :Ack<cr>

@@ -66,16 +66,8 @@ filetype plugin on
 autocmd FileType ruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby let g:rubycomplete_buffer_loading=1
 autocmd FileType ruby let g:rubycomplete_classes_in_global=1
-"autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-"autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
-
-" Supertab settings
-" supertab + eclim == java win
-let g:SuperTabDefaultCompletionTypeDiscovery = [
-\ "&completefunc:<c-x><c-u>",
-\ "&omnifunc:<c-x><c-o>",
-\ ]
-let g:SuperTabLongestHighlight = 1
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+autocmd Filetype java setlocal completefunc=javacomplete#CompleteParamsInfo
 
 "" shortcuts 
 nmap <leader>e :NERDTreeToggle<CR>
@@ -101,18 +93,3 @@ if has("unix")
                 \   'fallback': 'find %s -type f | head -' . g:ctrlp_max_files
                 \ }
 endif
-
-" Eclim settings
-" ,i imports whatever is needed for current line
-nnoremap <silent> <LocalLeader>i :JavaImport<cr>
-" ,d opens javadoc for statement in browser
-nnoremap <silent> <LocalLeader>d :JavaDocSearch -x declarations<cr>
-" ,<enter> searches context for statement
-nnoremap <silent> <LocalLeader><cr> :JavaSearchContext<cr>
-" ,jv validates current java file
-nnoremap <silent> <LocalLeader>jv :Validate<cr>
-" ,jc shows corrections for the current line of java
-nnoremap <silent> <LocalLeader>jc :JavaCorrect<cr>
-" 'open' on OSX will open the url in the default browser without issue
-let g:EclimBrowser='open'
-
